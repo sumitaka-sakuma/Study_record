@@ -10,9 +10,14 @@ class StudiesController extends Controller
 {
     public function index(){
 
-        $content = Study::all();
+        //$studies = Study::all();
 
-        return view('studies.index', compact('content'));
+        $studies = DB::table('studies')
+                   ->select('content', 'created_at')
+                   ->orderBy('created_at', 'desc')
+                   ->get();
+
+        return view('studies.index', compact('studies'));
     }
 
     public function create(){

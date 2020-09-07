@@ -14,7 +14,15 @@
                         </div>
                     @endif
                     
-                    {{ $content }}
+                    ＠foreach($studies as $study)
+                        {{ $study->content}}
+                    @endforeach
+
+                    <form method="GET" action="{{ route('studies.create')}}">
+                      <button type="submit" class="btn btn-primary">
+                        学習内容を記録する
+                      </butoon>
+                    </form>
                 </div>
             </div>
         </div>
