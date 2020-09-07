@@ -20,4 +20,18 @@ class StudiesController extends Controller
         return view('studies.create');
     }
 
+    public function store(Request $request){
+        
+        $studies = new Study();
+
+        $studies->content = $request->input('content');
+        $studies->started_time = $request->input('started_time');
+        $studies->ended_time = $request->input('ended_time');
+        $studies->remark = $request->input('remark');
+
+        $studies->save();
+
+        return redirect('studies/index');
+    }
+
 }
