@@ -14,6 +14,14 @@
                         </div>
                     @endif
                     
+                    <form method="GET" action="{{ route('studies.index')}}">
+                    <div class="form-group">
+                      <div class="text-left">
+                        <input class="btn btn-info " type="submit" value="戻る"> 
+                      </div>
+                    </div>
+                    </form>
+
                     <form method="POST" action="{{route('studies.store')}}">
                     @csrf
 

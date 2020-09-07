@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
@@ -13,10 +13,17 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
-                    ＠foreach($studies as $study)
-                        {{ $study->content}}
-                    @endforeach
+
+                    <table class="talbe">
+                      <tbody>
+                        @foreach($studies as $study)
+                        <tr>
+                          <td>{{ $study->content }}</td>
+                        @endforeach
+                        </tr>
+                      </tbody>
+                    </table>
+
 
                     <form method="GET" action="{{ route('studies.create')}}">
                       <button type="submit" class="btn btn-primary">
