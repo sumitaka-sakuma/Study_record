@@ -12,7 +12,7 @@ class StudiesController extends Controller
 
         $studies = DB::table('studies')
                    ->select('content', 'created_at')
-                   ->orderBy('created_at', 'desc')
+                   ->orderBy('created_at', 'asc')
                    ->get();
 
         return view('studies.index', compact('studies'));
@@ -49,6 +49,20 @@ class StudiesController extends Controller
         $studies = Study::find($id);
 
         return view('studies.edit', compact('studies'));
+    }
+
+    public function update(Request $request, $id){
+
+        $studies = Study::find($id);
+        
+        $studies->content = $request->input('content');
+        $studies->started_time = $request->input('started_time');
+        $studies->ended_time = $request->input('ended_time');
+        $studies->remark = $request->input('remark');
+        
+        $studies->save();
+
+        return redirect('studies/index');
     }
 
 }

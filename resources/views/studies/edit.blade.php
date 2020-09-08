@@ -14,15 +14,16 @@
                         </div>
                     @endif
                     
-                    <form method="GET" action="{{ route('studies.show')}}">
-                    <div class="form-group">
-                      <div class="text-left">
-                        <input class="btn btn-info " type="submit" value="戻る"> 
+                    <form method="GET" action="{{ route('studies.show', ['id' => $studies->id ])}}">
+
+                      <div class="form-group">
+                        <div class="text-left">
+                          <input class="btn btn-info " type="submit" value="戻る"> 
+                        </div>
                       </div>
-                    </div>
                     </form>
 
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('studies.update', ['id' => $studies->id ])}}">
                     @csrf
 
                     <div class="form-group">
@@ -53,10 +54,11 @@
 
                     <div class="form-group">
                       <div class="text-right">
-                        <input class="btn btn-info " type="submit" value="登録する"> 
+                        <input class="btn btn-info " type="submit" value="更新する"> 
                       </div>
                     </div>
                     <br>
+                  </form>
 
                 </div>
             </div>
