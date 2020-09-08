@@ -33,7 +33,9 @@
                         学習内容を記録する
                       </butoon>
                     </form>
+              
                 </div>
+                {{ $studies->links() }}
             </div>
         </div>
     </div>

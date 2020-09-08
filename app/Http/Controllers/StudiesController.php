@@ -15,7 +15,7 @@ class StudiesController extends Controller
         $studies = DB::table('studies')
                    ->select('id', 'content', 'created_at')
                    ->orderBy('id', 'desc')
-                   ->get();
+                   ->paginate(10);
 
         return view('studies.index', compact('studies'));
     }
