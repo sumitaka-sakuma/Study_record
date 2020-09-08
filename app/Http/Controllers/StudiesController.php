@@ -39,4 +39,13 @@ class StudiesController extends Controller
         return redirect('studies/index');
     }
 
+    public function show($id){
+
+        $studies = Study::find($id);
+
+        //dd($studies);
+
+        return view('studies.show', compact('studies'));
+    }
+
 }
