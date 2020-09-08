@@ -17,13 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('studies/index', 'StudiesController@index')->name('studies.index');
-Route::get('studies/create', 'StudiesController@create')->name('studies.create');
-Route::post('studies/store', 'StudiesController@store')->name('studies.store');
-Route::get('studies/show/{id}', 'StudiesController@show')->name('studies.show');
-Route::get('studies/edit/{id}', 'StudiesController@edit')->name('studies.edit');
-Route::post('studies/update/{id}', 'StudiesController@update')->name('studies.update');
-Route::post('studies/destroy/{id}', 'StudiesController@destroy')->name('studies.destroy');
+Route::group(['prefix' => 'studies', 'middleware' => 'auth'], function() {
+    Route::get('index', 'StudiesController@index')->name('studies.index');
+    Route::get('create', 'StudiesController@create')->name('studies.create');
+    Route::post('store', 'StudiesController@store')->name('studies.store');
+    Route::get('show/{id}', 'StudiesController@show')->name('studies.show');
+    Route::get('edit/{id}', 'StudiesController@edit')->name('studies.edit');
+    Route::post('update/{id}', 'StudiesController@update')->name('studies.update');
+    Route::post('destroy/{id}', 'StudiesController@destroy')->name('studies.destroy');
+});
 
 Auth::routes();
 
