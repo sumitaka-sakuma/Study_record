@@ -21,6 +21,7 @@ Route::get('studies/index', 'StudiesController@index')->name('studies.index');
 Route::get('studies/create', 'StudiesController@create')->name('studies.create');
 Route::post('studies/store', 'StudiesController@store')->name('studies.store');
 Route::get('studies/show/{id}', 'StudiesController@show')->name('studies.show');
+Route::get('studies/edit/{id}', 'StudiesController@edit')->name('studies.edit');
 
 Auth::routes();
 
