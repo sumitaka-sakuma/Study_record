@@ -53,6 +53,15 @@
                         </butoon>
                       </div>
                     </form>
+
+                    <form method="POST" action="{{ route('studies.destroy', ['id' => $studies->id ])}}" id="delete_{{ $studies->id }}">
+                    @csrf
+                      <div class="text-right">
+                        <button type="submit" class="btn btn-danger">
+                          削除する
+                        </butoon>
+                      </div>
+                    </form>
                 </div>
             </div>
         </div>

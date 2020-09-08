@@ -23,6 +23,7 @@ Route::post('studies/store', 'StudiesController@store')->name('studies.store');
 Route::get('studies/show/{id}', 'StudiesController@show')->name('studies.show');
 Route::get('studies/edit/{id}', 'StudiesController@edit')->name('studies.edit');
 Route::post('studies/update/{id}', 'StudiesController@update')->name('studies.update');
+Route::post('studies/destroy/{id}', 'StudiesController@destroy')->name('studies.destroy');
 
 Auth::routes();
 

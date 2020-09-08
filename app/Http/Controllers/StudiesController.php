@@ -65,4 +65,13 @@ class StudiesController extends Controller
         return redirect('studies/index');
     }
 
+    public function destroy($id){
+
+        $studies = Study::find($id);
+
+        $studies->delete();
+
+        return redirect('studies/index');
+    }
+
 }
