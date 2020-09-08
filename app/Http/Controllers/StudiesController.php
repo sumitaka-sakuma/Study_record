@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Study;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StudiesFormValidation;
@@ -12,7 +13,7 @@ class StudiesController extends Controller
     public function index(){
 
         $studies = DB::table('studies')
-                   ->select('id', 'content', 'created_at')
+                   ->select('user_id', 'id', 'content', 'created_at')
                    ->orderBy('id', 'desc')
                    ->get();
 
@@ -28,6 +29,7 @@ class StudiesController extends Controller
         
         $studies = new Study();
 
+        $studies->user_id = auth()->id();
         $studies->content = $request->input('content');
         $studies->started_time = $request->input('started_time');
         $studies->ended_time = $request->input('ended_time');
