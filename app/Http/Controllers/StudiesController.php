@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Study;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StudiesFormValidation;
 
 class StudiesController extends Controller
 {
@@ -12,7 +13,7 @@ class StudiesController extends Controller
 
         $studies = DB::table('studies')
                    ->select('id', 'content', 'created_at')
-                   ->orderBy('id', 'asc')
+                   ->orderBy('id', 'desc')
                    ->get();
 
         return view('studies.index', compact('studies'));
@@ -23,7 +24,7 @@ class StudiesController extends Controller
         return view('studies.create');
     }
 
-    public function store(Request $request){
+    public function store(StudiesFormValidation $request){
         
         $studies = new Study();
 

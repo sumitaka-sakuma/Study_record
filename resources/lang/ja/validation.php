@@ -53,7 +53,7 @@ return [
     'max'                  => [
         'numeric' => ':attributeには:max以下の数値を指定してください。',
         'file'    => ':attributeには:max KB以下のファイルを指定してください。',
-        'string'  => ':attributeには:max文字以下の文字列を指定してください。',
+        'string'  => ':attributeには:max文字以下の文字数で入力してください。',
         'array'   => ':attributeには:max個以下の要素を持つ配列を指定してください。',
     ],
     'mimes'                => ':attributeには:valuesのうちいずれかの形式のファイルを指定してください。',
@@ -68,7 +68,7 @@ return [
     'numeric'              => ':attributeには数値を指定してください。',
     'present'              => ':attributeには現在時刻を指定してください。',
     'regex'                => '正しい形式の:attributeを指定してください。',
-    'required'             => ':attributeは必須です。',
+    'required'             => ':attributeは必ず入力して下さい。',
     'required_if'          => ':otherが:valueの時:attributeは必須です。',
     'required_unless'      => ':otherが:values以外の時:attributeは必須です。',
     'required_with'        => ':valuesのうちいずれかが指定された時:attributeは必須です。',
@@ -117,10 +117,10 @@ return [
     */
 
     'attributes' => [
-        'password' => 'パスワード',
-        'your_name'=> '名前',
-        'title'    => '件名',
-        'email'    => 'メールアドレス',
+        'content' => '学習内容',
+        'started_time' => '開始時間',
+        'ended_time' => '終了時間',
+        'remark'=> '備考',
     ],
 
 ];
