@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('記録') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -45,12 +45,24 @@
 
                     <div class="form row">
                       <div class="form-group col-md-4">
-                        <label for="inputText" class="col-form-label text-md-right">開始時間</label>
-                        <input type="datetime-local" class="form-control" name="started_time">
+                        <label for="inputText" class="col-form-label text-md-right">開始日時</label>
+                        <input type="date" class="form-control" name="started_date">
                       </div>
                       <div class="form-group col-md-4">
-                        <label for="inputText" class="col-form-label text-md-right">終了時間</label>
-                        <input type="datetime-local" class="form-control" name="ended_time">
+                        <label for="inputText" class="col-form-label text-md-right">開始時刻</label>
+                        <input type="time" class="form-control" name="started_time">
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="form row">
+                      <div class="form-group col-md-4">
+                        <label for="inputText" class="col-form-label text-md-right">終了日時</label>
+                        <input type="date" class="form-control" name="ended_date">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputText" class="col-form-label text-md-right">終了時刻</label>
+                        <input type="time" class="form-control" name="ended_time">
                       </div>
                     </div>
                     <br>

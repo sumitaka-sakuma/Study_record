@@ -31,7 +31,9 @@ class StudiesController extends Controller
 
         $studies->user_id = auth()->id();
         $studies->content = $request->input('content');
+        $studies->started_date = $request->input('started_date');
         $studies->started_time = $request->input('started_time');
+        $studies->ended_date = $request->input('ended_date');
         $studies->ended_time = $request->input('ended_time');
         $studies->remark = $request->input('remark');
 

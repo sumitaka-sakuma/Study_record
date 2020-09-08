@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('詳細') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -28,8 +28,8 @@
                         <tr>
                           <th scope="col">ID</th>
                           <th scope="col">学習内容</th>
-                          <th scope="col">開始時間</th>
-                          <th scope="col">終了時間</th>
+                          <th scope="col">開始日時</th>
+                          <th scope="col">終了日時</th>
                           <th scope="col">備考</th>
                           <th scope="col">記録時間</th>
                         </tr>
@@ -38,8 +38,8 @@
                         <tr>
                           <td>{{ $studies->id}}</td>
                           <td>{{ $studies->content}}</td>
-                          <td>{{ $studies->started_time}}</td>
-                          <td>{{ $studies->ended_time}}</td>
+                          <td>{{ $studies->started_date.$studies->started_time}}</td>
+                          <td>{{ $studies->ended_date.$studies->ended_time}}</td>
                           <td>{{ $studies->remark}}</td>
                           <td>{{ $studies->created_at}}</td>
                         </tr>
