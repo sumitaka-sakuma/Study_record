@@ -13,7 +13,7 @@ class StudiesController extends Controller
     public function index(){
 
         $studies = DB::table('studies')
-                   ->select('user_id', 'id', 'content', 'created_at')
+                   ->select('id', 'content', 'created_at')
                    ->orderBy('id', 'desc')
                    ->get();
 
