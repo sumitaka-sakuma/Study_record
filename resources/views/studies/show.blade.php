@@ -14,6 +14,15 @@
                         </div>
                     @endif
 
+                    <form method="GET" action="{{ route('studies.index')}}">
+
+                      <div class="form-group">
+                        <div class="text-left">
+                          <input class="btn btn-info " type="submit" value="戻る"> 
+                        </div>
+                      </div>
+                    </form>
+
                     <table class="table">
                       <thead>
                         <tr>
@@ -37,6 +46,13 @@
                       </tdoby>
                     </table>
                     
+                    <form method="GET" action="{{ route('studies.edit', ['id' => $studies->id ]) }}">
+                      <div class="text-right">
+                        <button type="submit" class="btn btn-primary">
+                          編集する
+                        </butoon>
+                      </div>
+                    </form>
                 </div>
             </div>
         </div>

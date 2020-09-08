@@ -11,8 +11,8 @@ class StudiesController extends Controller
     public function index(){
 
         $studies = DB::table('studies')
-                   ->select('content', 'created_at')
-                   ->orderBy('created_at', 'asc')
+                   ->select('id', 'content', 'created_at')
+                   ->orderBy('id', 'asc')
                    ->get();
 
         return view('studies.index', compact('studies'));

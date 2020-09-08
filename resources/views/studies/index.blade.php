@@ -18,7 +18,10 @@
                       <tbody>
                         @foreach($studies as $study)
                         <tr>
+                          <td>{{ $study->id}}</td>
                           <td>{{ $study->content }}</td>
+                          <td>{{ $study->created_at}}</td>
+                          <td><a href="{{ route('studies.show', ['id' => $study->id] ) }}">詳細を見る</a></td>
                         @endforeach
                         </tr>
                       </tbody>
