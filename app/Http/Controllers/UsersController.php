@@ -11,8 +11,12 @@ class UsersController extends Controller
 {
     public function index(){
 
-        $users = User::all();
-    
+        $users = DB::table('users')
+                  ->join('studies', 'users.id', '=', 'studies.id')
+                  ->select('users.name', 'users.id', 'studies.*')
+                  ->orderBy('studies.created_at', 'desc')
+                  ->get();
+
         return view('users.index', compact('users'));
     }
 

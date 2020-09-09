@@ -14,21 +14,14 @@
                         </div>
                     @endif
 
-                    <form method="GET" action="">
-                    @csrf
-                      <div class="form-group">
-                        <div class="text-left">
-                          <input class="btn btn-info " type="submit" value="戻る"> 
-                        </div>
-                      </div>
-                    </form>
 
                     <table class="talbe">
                       <tbody>
                         @foreach($users as $user)
                         <tr>
-                          <td>{{ $user->id}}</td>
-                          <td><a href="{{ route('users.show', ['id' => $user->id ]) }}">{{ $user->name }}</a></td>
+                          <td></td>
+                          <td></td>
+                          <td><a href="{{ route('users.show', ['id' => $user->id ]) }}">{{ $user->name}}</a></td>
                           <td>{{ $user->created_at}}</td>
                         @endforeach
                         </tr>
