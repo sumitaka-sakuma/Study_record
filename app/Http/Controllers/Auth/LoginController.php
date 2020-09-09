@@ -37,4 +37,11 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    protected function redirectTo() {
+        if(! Auth::user()) {
+             return '/';
+        }
+        return route('users.show', ['user' => Auth::id()]);
+     }
 }

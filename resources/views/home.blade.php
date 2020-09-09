@@ -14,6 +14,8 @@
                         </div>
                     @endif
 
+                    {{ Auth::user()->name }}
+
                     <form method="GET" action="{{ route('studies.index') }}">
                     @csrf
                       <div class="text-left">

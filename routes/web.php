@@ -18,13 +18,12 @@ Route::get('/', function () {
 });
 
 
-
-
 Route::group(['prefix' => 'users', 'middleware' => 'auth'], function() {
 
     Route::get('index', 'UsersController@index')->name('users.index');
     Route::get('show/{id}', 'UsersController@show')->name('users.show');
 });
+
 
 Route::group(['prefix' => 'studies', 'middleware' => 'auth'], function() {
 

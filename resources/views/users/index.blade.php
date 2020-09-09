@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <form method="GET" action="{{ route('home')}}">
+                    <form method="GET" action="">
                     @csrf
                       <div class="form-group">
                         <div class="text-left">
