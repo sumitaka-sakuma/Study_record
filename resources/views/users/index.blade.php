@@ -14,6 +14,15 @@
                         </div>
                     @endif
 
+                    <form method="GET" action="{{ route('studies.index', ['id' => Auth::user()->id ]) }}">
+                    @csrf
+                      <div class="form-group">
+                        <div class="text-left">
+                          <input class="btn btn-info " type="submit" value="マイページ"> 
+                        </div>
+                      </div>
+                    </form>
+
                     <form method="GET" action="{{ route('users.edit', ['id' => Auth::user()->id ]) }}">
                     @csrf
                       <div class="form-group">

@@ -14,11 +14,20 @@
                         </div>
                     @endif
 
-                    <form method="GET" action="{{ route('home')}}">
+                    <form method="GET" action="{{ route('users.index')}}">
                     @csrf
                       <div class="form-group">
                         <div class="text-left">
                           <input class="btn btn-info " type="submit" value="戻る"> 
+                        </div>
+                      </div>
+                    </form>
+
+                    <form method="GET" action="{{ route('users.edit', ['id' => Auth::user()->id ]) }}">
+                    @csrf
+                      <div class="form-group">
+                        <div class="text-left">
+                          <input class="btn btn-info " type="submit" value="プロフィールの編集"> 
                         </div>
                       </div>
                     </form>
