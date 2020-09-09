@@ -15,10 +15,10 @@ class AddMyProfileToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             
-            $table->Integer('birthday')->after('email_verified_at');
-            $table->boolean('gender')->after('birthday');
+            $table->Integer('birthday')->nullable($value = true)->after('email_verified_at');
+            $table->boolean('gender')->nullable($value = true)->after('birthday');
             $table->longText('self_introduction')->nullable($value = true)->after('gender');
-            $table->string('image_path')->after('self_introduction');
+            $table->string('image_path')->nullable($value = true)->after('self_introduction');
         });
     }
 

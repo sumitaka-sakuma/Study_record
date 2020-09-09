@@ -71,10 +71,4 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function redirectTo() {
-        if(! Auth::user()) {
-             return '/';
-        }
-        return route('users.show', ['user' => Auth::id()]);
-     }
 }
