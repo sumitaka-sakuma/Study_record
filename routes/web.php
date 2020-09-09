@@ -18,10 +18,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('users/index', 'UsersController@index')->name('users.index');
-Route::get('users/show/{id}', 'UsersController@show')->name('users.show');
+
+
+Route::group(['prefix' => 'users', 'middleware' => 'auth'], function() {
+
+    Route::get('index', 'UsersController@index')->name('users.index');
+    Route::get('show/{id}', 'UsersController@show')->name('users.show');
+});
 
 Route::group(['prefix' => 'studies', 'middleware' => 'auth'], function() {
+
     Route::get('index', 'StudiesController@index')->name('studies.index');
     Route::get('create', 'StudiesController@create')->name('studies.create');
     Route::post('store', 'StudiesController@store')->name('studies.store');
