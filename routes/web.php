@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('users/index', 'UsersController@index')->name('users.index');
+Route::get('users/show/{id}', 'UsersController@show')->name('users.show');
+
 Route::group(['prefix' => 'studies', 'middleware' => 'auth'], function() {
     Route::get('index', 'StudiesController@index')->name('studies.index');
     Route::get('create', 'StudiesController@create')->name('studies.create');

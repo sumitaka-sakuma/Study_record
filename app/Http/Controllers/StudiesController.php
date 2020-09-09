@@ -50,7 +50,7 @@ class StudiesController extends Controller
     }
 
     public function edit($id){
-
+        
         $studies = Study::find($id);
 
         return view('studies.edit', compact('studies'));
