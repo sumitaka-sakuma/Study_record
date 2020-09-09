@@ -14,6 +14,15 @@
                         </div>
                     @endif
 
+                    <form method="GET" action="{{ route('home')}}">
+                    @csrf
+                      <div class="form-group">
+                        <div class="text-left">
+                          <input class="btn btn-info " type="submit" value="戻る"> 
+                        </div>
+                      </div>
+                    </form>
+
                     <table class="talbe">
                       <tbody>
                         @foreach($studies as $study)

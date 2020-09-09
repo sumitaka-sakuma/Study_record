@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('ホーム') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,21 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <form method="GET" action="{{ route('studies.index') }}">
+                    @csrf
+                      <div class="text-left">
+                        <input class="btn btn-info " type="submit" value="マイページ"> 
+                      </div>
+                    </form> 
+                    <br>
+
+                    <form method="GET" action="{{ route('users.index') }}">
+                    @csrf
+                      <div class="text-left">
+                        <input class="btn btn-info " type="submit" value="他のユーザー"> 
+                      </div>
+                    </form> 
+
                 </div>
             </div>
         </div>
