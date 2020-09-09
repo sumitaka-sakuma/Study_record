@@ -12,14 +12,18 @@ class UsersController extends Controller
     public function index(){
 
         $users = User::all();
-        //dd($users);
-        
+    
         return view('users.index', compact('users'));
     }
 
     public function show($id){
 
-        $users = User::find($id);
+        
+        $users = DB::table('studies')
+                 ->select('id', 'content', 'started_date', 'started_time', 'ended_date', 'ended_time', 'remark', 'created_at')
+                 ->where('user_id', '=', $id)
+                 ->orderBy('id', 'desc')
+                 ->get();
 
         return view('users.show', compact('users'));
     }
