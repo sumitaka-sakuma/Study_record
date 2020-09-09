@@ -34,15 +34,16 @@
 
                     <table class="talbe">
                       <tbody>
-                        @foreach($users as $user)
+                      @foreach($users as $user)
                         <tr>
-                          <td></td>
-                          <td></td>
                           <td><a href="{{ route('users.show', ['id' => $user->id ]) }}">{{ $user->name}}</a></td>
                           <td>{{ $user->content}}</td>
+                          <td>{{ $user->started_date.$user->started_time}}</td>
+                          <td>{{ $user->ended_date.$user->ended_time}}</td>
+                          <td>{{ $user->remark}}</td>
                           <td>{{ $user->created_at}}</td>
-                        @endforeach
                         </tr>
+                        @endforeach
                       </tbody>
                     </table>
                 </div>
