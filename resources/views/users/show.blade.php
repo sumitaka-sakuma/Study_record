@@ -26,7 +26,6 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th scope="col">ID</th>
                           <th scope="col">学習内容</th>
                           <th scope="col">開始日時</th>
                           <th scope="col">終了日時</th>
@@ -37,7 +36,6 @@
                       <tbody>
                         @foreach($users as $user)
                         <tr>
-                          <td>{{ $user->id}}</td>
                           <td>{{ $user->content}}</td>
                           <td>{{ $user->started_date.$user->started_time}}</td>
                           <td>{{ $user->ended_date.$user->ended_time}}</td>

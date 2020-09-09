@@ -14,6 +14,14 @@
                         </div>
                     @endif
 
+                    <form method="GET" action="{{ route('users.edit', ['id' => Auth::user()->id ]) }}">
+                    @csrf
+                      <div class="form-group">
+                        <div class="text-left">
+                          <input class="btn btn-info " type="submit" value="プロフィールの編集"> 
+                        </div>
+                      </div>
+                    </form>
 
                     <table class="talbe">
                       <tbody>
@@ -22,6 +30,7 @@
                           <td></td>
                           <td></td>
                           <td><a href="{{ route('users.show', ['id' => $user->id ]) }}">{{ $user->name}}</a></td>
+                          <td>{{ $user->content}}</td>
                           <td>{{ $user->created_at}}</td>
                         @endforeach
                         </tr>
